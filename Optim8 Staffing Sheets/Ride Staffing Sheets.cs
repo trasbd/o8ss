@@ -38,7 +38,7 @@ namespace Optim8_Staffing_Sheets
 
             Thread plswait = new Thread(() => new pleasestandby().ShowDialog());
                 
-             plswait.Start();
+             //plswait.Start();
 
 
             if (txtCompany.Text.Equals("") || txtID.Text.Equals("") || txtPass.Text.Equals(""))
@@ -562,7 +562,10 @@ namespace Optim8_Staffing_Sheets
 
                         foreach (var person in ride.m_shift[i].m_crew)
                         {
-                            xlWorkSheet.Cells[start_row, col] = person.m_start.ToShortTimeString() + "-" + person.m_end.ToShortTimeString() + "  " + person.m_name;
+                            
+                                xlWorkSheet.Cells[start_row, col] = person.m_start.ToShortTimeString() + "-" + person.m_end.ToShortTimeString() + "  " + person.m_name;
+                            
+                            
                             string colC;
                             switch (col)
                             {

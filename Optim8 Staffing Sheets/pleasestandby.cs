@@ -25,7 +25,7 @@ namespace Optim8_Staffing_Sheets
         private void pleasestandby_Load(object sender, EventArgs e)
         {
             this.TopMost = true;
-            this.FormBorderStyle = FormBorderStyle.None;
+            //this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
         }
     }

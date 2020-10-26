@@ -103,6 +103,10 @@ namespace Optim8_Staffing_Sheets
                     
                     index += 9;
                     m_name = line.Substring(index, line.Length - index);
+                    if(m_ride.Contains("Restroom"))
+                    {
+                        m_name = "R - " + m_name;
+                    }
                     //Console.Write(m_name);
                 }
 
