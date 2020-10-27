@@ -33,9 +33,9 @@ namespace Optim8_Staffing_Sheets
             DateTime dateWanted = dtpDate.Value;
             double shiftStartTimeAlloance = .77; //In hours
 
-            Thread plswait = new Thread(() => new pleasestandby().ShowDialog());
+            //Thread plswait = new Thread(() => new pleasestandby().ShowDialog());
 
-            plswait.Start();
+            //plswait.Start();
 
 
             if (txtCompany.Text.Equals("") || txtID.Text.Equals("") || txtPass.Text.Equals(""))
@@ -189,7 +189,7 @@ namespace Optim8_Staffing_Sheets
                     //if table contains no records of actual schedules
                     if ((line = file.ReadLine()) != null && line.Contains("No record found."))
                     {
-                        plswait.Abort();
+                        //plswait.Abort();
                         //Displays message box
                         MessageBox.Show("No schedules have been posted for Area " + areaNumber + " on " + dateWanted.ToShortDateString());
                         //Close file stream
@@ -458,13 +458,13 @@ namespace Optim8_Staffing_Sheets
 
                 catch (OpenQA.Selenium.NoSuchElementException)
                 {
-                    plswait.Abort();
+                    //plswait.Abort();
 
                     MessageBox.Show("Could not login!\nPlease check Internet connection.");
                 }
                 catch (Exception ex)
                 {
-                    plswait.Abort();
+                    //plswait.Abort();
 
                     if (driver != null)
                     {
@@ -484,7 +484,7 @@ namespace Optim8_Staffing_Sheets
                 }
             
     }
-            plswait.Abort();
+            //plswait.Abort();
 
         }
 
