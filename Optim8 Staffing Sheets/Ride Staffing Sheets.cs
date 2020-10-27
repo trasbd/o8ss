@@ -31,7 +31,7 @@ namespace Optim8_Staffing_Sheets
             //Variables
             //int areaNumber = cbArea.SelectedIndex+1;
             DateTime dateWanted = dtpDate.Value;
-            double shiftStartTimeAlloance = 1; //In hours
+            double shiftStartTimeAlloance = 1.01; //In hours
 
 
             bool sortRestrooms = checkBoxSortRR.Checked;
@@ -356,14 +356,14 @@ namespace Optim8_Staffing_Sheets
                             ""
                         };
 
-
+                        var people2 = people.OrderBy(i => i.m_start).ToList();
                         //var people2 = people.OrderBy(i => i.m_ride.Contains("PS Area")).ThenBy(i => i.m_ride.Contains("Restroom")).ToList();
                         //var people2 = people.OrderBy(i=> i.m_ride).ThenBy(i => i.m_ride.Contains("PS Area")).ThenBy(i => i.m_ride.Equals("")).ToList();
-                        var people2 = people.OrderByDescending(i => rideSortOrderReversed.IndexOf(i.m_ride)).ToList();
+                        var people3 = people2.OrderByDescending(i => rideSortOrderReversed.IndexOf(i.m_ride)).ToList();
                         
                         //var people2 = people.OrderBy(o => o.m_ride).ToList<individualSchedule>();
 
-                        people = people2;
+                        people = people3;
 
 
                         //[ride][shift][person]
