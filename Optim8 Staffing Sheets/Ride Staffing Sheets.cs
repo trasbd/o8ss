@@ -32,7 +32,9 @@ namespace Optim8_Staffing_Sheets
             //int areaNumber = cbArea.SelectedIndex+1;
             DateTime dateWanted = dtpDate.Value;
             double shiftStartTimeAlloance = .77; //In hours
-            bool sortRestrooms = true;
+
+
+            bool sortRestrooms = checkBoxSortRR.Checked;
 
 
             //Form waiting = new pleasestandby();
@@ -694,10 +696,11 @@ namespace Optim8_Staffing_Sheets
                         foreach (var person in ride.m_shift[i].m_crew)
                         {
                             
-                            xlWorkSheet.Cells[start_row, col] = person.m_start.ToShortTimeString() + "-" + person.m_end.ToShortTimeString() + "  <b>" + person.m_name;
+                            xlWorkSheet.Cells[start_row, col] = person.m_start.ToShortTimeString() + "-" + person.m_end.ToShortTimeString() + "  " + person.m_name;
                             if (person.m_name.Contains("R - "))
                             {
                                 //xlWorkSheet.Range[start_row, col].get_Characters(0, 4).Font.Bold = true;
+                                xlWorkSheet.Cells[start_row, col].Font.Bold = true;
                             }
 
                             string colC;

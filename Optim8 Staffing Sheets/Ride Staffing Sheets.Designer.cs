@@ -38,6 +38,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.checkBoxSortRR = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label3
@@ -73,7 +74,7 @@
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(96, 74);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(132, 22);
@@ -83,7 +84,7 @@
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(96, 41);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(132, 22);
             this.txtID.TabIndex = 0;
@@ -92,7 +93,7 @@
             // txtCompany
             // 
             this.txtCompany.Location = new System.Drawing.Point(96, 7);
-            this.txtCompany.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCompany.Margin = new System.Windows.Forms.Padding(4);
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.Size = new System.Drawing.Size(132, 22);
             this.txtCompany.TabIndex = 20;
@@ -101,7 +102,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(320, 79);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 19;
@@ -121,10 +122,22 @@
             // dtpDate
             // 
             this.dtpDate.Location = new System.Drawing.Point(264, 15);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(265, 22);
             this.dtpDate.TabIndex = 30;
+            // 
+            // checkBoxSortRR
+            // 
+            this.checkBoxSortRR.AutoSize = true;
+            this.checkBoxSortRR.Checked = true;
+            this.checkBoxSortRR.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxSortRR.Location = new System.Drawing.Point(281, 51);
+            this.checkBoxSortRR.Name = "checkBoxSortRR";
+            this.checkBoxSortRR.Size = new System.Drawing.Size(196, 21);
+            this.checkBoxSortRR.TabIndex = 31;
+            this.checkBoxSortRR.Text = "Sort Restrooms into Areas";
+            this.checkBoxSortRR.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -132,6 +145,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 196);
+            this.Controls.Add(this.checkBoxSortRR);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.label3);
@@ -142,7 +156,7 @@
             this.Controls.Add(this.txtCompany);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Staffing Sheets";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
@@ -163,6 +177,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.CheckBox checkBoxSortRR;
     }
 }
 
