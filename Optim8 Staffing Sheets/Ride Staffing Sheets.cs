@@ -357,7 +357,8 @@ namespace Optim8_Staffing_Sheets
                             ""
                         };
 
-                        var people2 = people.OrderBy(i => i.m_start).ToList();
+                        var people4 = people.OrderBy(i => i.m_end).ToList();
+                        var people2 = people4.OrderBy(i => i.m_start).ToList();
                         //var people2 = people.OrderBy(i => i.m_ride.Contains("PS Area")).ThenBy(i => i.m_ride.Contains("Restroom")).ToList();
                         //var people2 = people.OrderBy(i=> i.m_ride).ThenBy(i => i.m_ride.Contains("PS Area")).ThenBy(i => i.m_ride.Equals("")).ToList();
                         var people3 = people2.OrderByDescending(i => rideSortOrderReversed.IndexOf(i.m_ride)).ToList();
