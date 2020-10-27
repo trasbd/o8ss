@@ -32,11 +32,12 @@ namespace Optim8_Staffing_Sheets
             //int areaNumber = cbArea.SelectedIndex+1;
             DateTime dateWanted = dtpDate.Value;
             double shiftStartTimeAlloance = .77; //In hours
+            bool sortRestrooms = true;
 
 
             //Form waiting = new pleasestandby();
 
-            Thread plswait = new Thread(() => new pleasestandby().ShowDialog());
+            //Thread plswait = new Thread(() => new pleasestandby().ShowDialog());
                 
              //plswait.Start();
 
@@ -59,7 +60,7 @@ namespace Optim8_Staffing_Sheets
 
                         //Disables images so it loads faster
                         options.AddUserProfilePreference("profile.default_content_setting_values.images", 2);
-                        options.AddArgument("headless");
+                        //options.AddArgument("headless");
                         ChromeDriverService service = ChromeDriverService.CreateDefaultService();
                         service.HideCommandPromptWindow = true;
                         driver = new ChromeDriver(service, options);
@@ -186,6 +187,7 @@ namespace Optim8_Staffing_Sheets
                     rawTable = rawTable.Replace("Ride Operations ", "");
                     rawTable = rawTable.Replace("Arcade Att ", "");
                     rawTable = rawTable.Replace("(16-17)", "");
+                    rawTable = rawTable.Replace("(14-15)", "");
 
                     //Writes table to file so it can be read from as a string
                     //File is stored in program directory
@@ -209,6 +211,8 @@ namespace Optim8_Staffing_Sheets
                     }
                     else
                     {
+                        
+
                         //*****************************************************************************
                         //**When referencing 'everyone' assume everyone within area and date selected**
                         //*****************************************************************************
@@ -232,6 +236,127 @@ namespace Optim8_Staffing_Sheets
                         //Deletes table file
                         File.Delete(appDataFolder + "\\rawTable.dat");
 
+                        if(sortRestrooms)
+                        {
+                            //*************************************************
+                            //**Getting the Certs to sort Restrooms into Areas**
+                            //*************************************************
+
+                            List<string> areaCertNames = new List<string>();
+                            List<string> psArea1 = new List<string>();
+                            List<string> psArea2 = new List<string>();
+                            List<string> psArea3 = new List<string>();
+                            List<string> psArea4 = new List<string>();
+
+                            List<List<string>> areaCerts = new List<List<string>>();
+                            areaCerts.Add(psArea1);
+                            areaCerts.Add(psArea2);
+                            areaCerts.Add(psArea3);
+                            areaCerts.Add(psArea4);
+
+
+                            areaCertNames.Add("PS - Area 1");
+                            areaCertNames.Add("PS - Area 2");
+                            areaCertNames.Add("PS - Area 3");
+                            areaCertNames.Add("PS - Area 4");
+
+                            //IWebDriver driver = new ChromeDriver();
+
+                            string certUrl = "https://sixflags.team/tm/hr/cert";
+
+                            driver.Navigate().GoToUrl(certUrl);
+
+                            if (!driver.Url.Equals(certUrl))
+                            {
+                                //not logged in
+                                //Console.WriteLine(driver.Url);
+                                //Console.ReadLine();
+                                driver.Navigate().GoToUrl(certUrl);
+
+                            }
+
+
+
+                            SelectElement departmentDropDownCert = new SelectElement(driver.FindElement(By.Id("ddd2")));
+                            departmentDropDownCert.SelectByText("Park Services");
+
+                            for (int i = 0; i < 4; i++)
+                            {
+
+                                SelectElement certName = new SelectElement(driver.FindElement(By.Id("ddcert")));
+                                certName.SelectByText(areaCertNames[i]);
+
+                                IWebElement goBtnCert = driver.FindElement(By.Id("divgo"));
+                                goBtnCert.Click();
+
+                                Thread.Sleep(1000);
+
+                                IWebElement pageSize = driver.FindElement(By.Id("txtpagesize"));
+                                if (pageSize.Displayed)
+                                {
+                                    IWebElement totalLines = driver.FindElement(By.Id("spanpagetotal"));
+                                    pageSize.SendKeys(totalLines.Text);
+                                    driver.FindElement(By.Id("divpagesearch")).Click();
+                                    Thread.Sleep(10000);
+                                }
+
+
+                                System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> names = driver.FindElements(By.TagName("tr"));
+
+                                //string certs = driver.FindElement(By.Id("tbgrid1")).Text;
+
+                                int lastNameIndex = 2;
+                                int firstNameIndex = 3;
+                                //int certNameIndex = 5;
+
+                                foreach (IWebElement person in names)
+                                {
+                                    System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> personElements = person.FindElements(By.TagName("td"));
+                                    //if (personElements[certNameIndex].Text.Equals(areaCertNames[i]))
+                                    //{
+                                    areaCerts[i].Add(personElements[lastNameIndex].Text + ", " + personElements[firstNameIndex].Text);
+                                    //}
+                                }
+
+                            }
+                            foreach (individualSchedule worker in people)
+                            {
+                                if(worker.m_ride.Contains("Restroom"))
+                                {
+                                    for (int i = 1; i <= 4; i++)
+                                    {
+                                        if (areaCerts[i-1].Contains(worker.m_name))
+                                        {
+                                            worker.m_ride = "PS Area "+i + " ";
+                                            worker.m_name = "R - " + worker.m_name;
+                                        }
+                                    }
+                                }
+                            }
+                            //people.Sort((x, y) => x.m_ride.CompareTo(y.m_ride));
+                            
+                        }
+
+                        List<String> rideSortOrderReversed = new List<String> {
+                            "PS Area E / Catering ",
+                            "Women's Restrooms ",
+                            "Men's Restrooms ",
+                            "PS Area 4 ",
+                            "PS Area 3 ",
+                            "PS Area 2 ",
+                            "PS Area 1 ",
+                            ""
+                        };
+
+
+                        //var people2 = people.OrderBy(i => i.m_ride.Contains("PS Area")).ThenBy(i => i.m_ride.Contains("Restroom")).ToList();
+                        //var people2 = people.OrderBy(i=> i.m_ride).ThenBy(i => i.m_ride.Contains("PS Area")).ThenBy(i => i.m_ride.Equals("")).ToList();
+                        var people2 = people.OrderByDescending(i => rideSortOrderReversed.IndexOf(i.m_ride)).ToList();
+                        
+                        //var people2 = people.OrderBy(o => o.m_ride).ToList<individualSchedule>();
+
+                        people = people2;
+
 
                         //[ride][shift][person]
                         //Making a list of rides
@@ -243,7 +368,7 @@ namespace Optim8_Staffing_Sheets
 
                         //For the entire list of people starting at the second entry
                         //Creating the correct number of rides with ride names for everyone
-                        for (int i = 1; i < people.Count(); i++)
+                        for (int i = 2; i < people.Count(); i++)
                         {
                             
                             //if the ride name of current person is different from the previous person
@@ -257,15 +382,18 @@ namespace Optim8_Staffing_Sheets
                             //m_shift[0] is a null shift (not day, night, nor swing) for everyone scheduled at the ride
                             area.ElementAt(area.Count - 1).m_shift[0].m_crew.Add(people.ElementAt(i));
 
+                            
 
                         }
+
+                        
 
 
 
                         //*************************************************
                         //**SORTS PEOPLE INTO DAY, SWING, AND NIGHT SHIFT**
                         //*************************************************
-                        
+
                         int count = 0;
                         //for each ride
                         foreach (var ride in area)
@@ -317,7 +445,7 @@ namespace Optim8_Staffing_Sheets
                                                     {
                                                         ride.m_shift[3].m_crew.Add(person);
                                                     }
-                                                        //if they dont fit within 1 hour of the other list they are put here                                                    
+                                                    //if they dont fit within 1 hour of the other list they are put here                                                    
                                                     else
                                                     {
                                                         ride.m_shift[4].m_crew.Add(person);
@@ -328,6 +456,7 @@ namespace Optim8_Staffing_Sheets
                                     }
                                 }
                                 count++;
+                            
                             }
                         }
 
@@ -492,7 +621,7 @@ namespace Optim8_Staffing_Sheets
     }
 
             //waiting.Close();
-            plswait.Abort();
+            //plswait.Abort();
 
 }
 
@@ -545,8 +674,10 @@ namespace Optim8_Staffing_Sheets
                     xlWorkSheet.Cells[row, 3].Font.Underline = true;
                     xlWorkSheet.Cells[row, 3].HorizontalAlignment = 3;
 
+                    
+
                     //skips down 2 rows
-                    row+=2;
+                    row +=2;
                     int max_row=0;
                     int start_row=row;
                     for (int i =1; i<5;i++)
@@ -563,9 +694,12 @@ namespace Optim8_Staffing_Sheets
                         foreach (var person in ride.m_shift[i].m_crew)
                         {
                             
-                                xlWorkSheet.Cells[start_row, col] = person.m_start.ToShortTimeString() + "-" + person.m_end.ToShortTimeString() + "  " + person.m_name;
-                            
-                            
+                            xlWorkSheet.Cells[start_row, col] = person.m_start.ToShortTimeString() + "-" + person.m_end.ToShortTimeString() + "  <b>" + person.m_name;
+                            if (person.m_name.Contains("R - "))
+                            {
+                                //xlWorkSheet.Range[start_row, col].get_Characters(0, 4).Font.Bold = true;
+                            }
+
                             string colC;
                             switch (col)
                             {

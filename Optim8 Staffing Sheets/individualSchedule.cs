@@ -13,7 +13,7 @@ namespace Optim8_Staffing_Sheets
         public DateTime m_start;
         public DateTime m_end;
         public string m_name = "";
-        public string m_Fname = "";
+        //public string m_Fname = "";
 
 
         public individualSchedule(string line)
@@ -105,7 +105,7 @@ namespace Optim8_Staffing_Sheets
                     m_name = line.Substring(index, line.Length - index);
                     if(m_ride.Contains("Restroom"))
                     {
-                        m_name = "R - " + m_name;
+                        //m_name = "R - " + m_name;
                     }
                     //Console.Write(m_name);
                 }
