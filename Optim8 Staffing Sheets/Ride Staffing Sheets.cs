@@ -31,7 +31,7 @@ namespace Optim8_Staffing_Sheets
             //Variables
             //int areaNumber = cbArea.SelectedIndex+1;
             DateTime dateWanted = dtpDate.Value;
-            double shiftStartTimeAlloance = .77; //In hours
+            double shiftStartTimeAlloance = 1; //In hours
 
 
             bool sortRestrooms = checkBoxSortRR.Checked;
