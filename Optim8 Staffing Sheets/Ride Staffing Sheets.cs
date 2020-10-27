@@ -178,13 +178,21 @@ namespace Optim8_Staffing_Sheets
 
                     //Writes table to file so it can be read from as a string
                     //File is stored in program directory
-                    System.IO.File.WriteAllText(appDataFolder+"\\rawTable.dat", rawTable);
+                    //System.IO.File.WriteAllText(appDataFolder+"\\rawTable.dat", rawTable);
 
                     string line;
-                    
+
+
 
                     //Reading table file
-                    System.IO.StreamReader file = new System.IO.StreamReader(appDataFolder+"\\rawTable.dat");
+                    //System.IO.StreamReader file = new System.IO.StreamReader(appDataFolder+"\\rawTable.dat");
+                    
+                    // convert string to stream
+                    byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(rawTable);
+                    //byte[] byteArray = Encoding.ASCII.GetBytes(contents);
+                    MemoryStream stream = new MemoryStream(byteArray);
+                    System.IO.StreamReader file = new System.IO.StreamReader(stream);
+
 
                     //if table contains no records of actual schedules
                     if ((line = file.ReadLine()) != null && line.Contains("No record found."))
