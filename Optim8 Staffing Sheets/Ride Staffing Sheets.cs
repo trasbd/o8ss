@@ -50,7 +50,8 @@ namespace Optim8_Staffing_Sheets
             }
             else
             {
-
+                Cursor.Current = Cursors.WaitCursor;
+                Application.DoEvents();
                 try
                 {
                     //if the driver isnt already open
@@ -368,9 +369,11 @@ namespace Optim8_Staffing_Sheets
 
                         //[ride][shift][person]
                         //Making a list of rides
-                        var area = new List<ride>();
-                        //Making first ride the ride of the first person in list
-                        area.Add(new ride(people.ElementAt(0).m_ride));
+                        var area = new List<ride>
+                        {
+                            //Making first ride the ride of the first person in list
+                            new ride(people.ElementAt(0).m_ride)
+                        };
                         //adds the first person to their ride in a unsorted shift
                         area.ElementAt(0).m_shift[0].m_crew.Add(people.ElementAt(0));
 
@@ -627,14 +630,16 @@ namespace Optim8_Staffing_Sheets
                 }
             
     }
+            Cursor.Current = Cursors.Default;
+
 
             //waiting.Close();
             //plswait.Abort();
 
-}
+        }
 
 
-                
+
         //Creates a Staffing Sheet Excel spreadsheet for an Area for a certain Date passed
         //Pre: area really should contain at least 1 ride (will make blank staffing sheet if 0 rides)
         //Post: Creates an .xls file in the program directory
