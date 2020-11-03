@@ -44,7 +44,8 @@ namespace Optim8_Staffing_Sheets
             }
             else
             {
-
+                Cursor.Current = Cursors.WaitCursor;
+                Application.DoEvents();
                 try
                 {
                     //if the driver isnt already open
@@ -490,6 +491,8 @@ namespace Optim8_Staffing_Sheets
                         MessageBox.Show("An Error has occured. Please try again.\n" + ex.ToString());
                     }
                 }
+
+                Cursor.Current = Cursors.Default;
             
     }
             //plswait.Abort();
