@@ -203,7 +203,7 @@ namespace Optim8_Staffing_Sheets
                         //Close file stream
                         file.Close();
                         //Deletes table file
-                        File.Delete(appDataFolder + "\\rawTable.dat");
+                        //File.Delete(appDataFolder + "\\rawTable.dat");
                     }
                     else
                     {

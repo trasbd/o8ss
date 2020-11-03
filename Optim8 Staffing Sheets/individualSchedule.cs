@@ -18,7 +18,7 @@ namespace Optim8_Staffing_Sheets
 
         public individualSchedule(string line)
         {
-            if (!line.Contains("Total Hours") && !line.Contains("Department Location Position Seq. Time"))
+            if (!line.Contains("Total Hours") && !line.Contains("Department "))//Location Position Seq. Time"))
             {
                 int index = 7;
                 int lenght = 0;
