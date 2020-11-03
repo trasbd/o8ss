@@ -79,7 +79,6 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(132, 22);
             this.txtPass.TabIndex = 1;
-            this.txtPass.Text = "Ninja1234!";
             // 
             // txtID
             // 
@@ -88,7 +87,6 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(132, 22);
             this.txtID.TabIndex = 0;
-            this.txtID.Text = "sfillman";
             // 
             // txtCompany
             // 
