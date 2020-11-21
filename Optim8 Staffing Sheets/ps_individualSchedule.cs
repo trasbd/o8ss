@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Optim8_Staffing_Sheets
 {
-    class individualSchedule
+    class ps_individualSchedule
     {
         public string m_ride = "";
         public string m_position = "";
@@ -16,7 +16,7 @@ namespace Optim8_Staffing_Sheets
         //public string m_Fname = "";
 
 
-        public individualSchedule(string line)
+        public ps_individualSchedule(string line)
         {
             if (!line.Contains("Total Hours") && !line.Contains("Location Position Seq. Time"))
             {

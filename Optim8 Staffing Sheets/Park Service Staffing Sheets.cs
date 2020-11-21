@@ -12,13 +12,13 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Optim8_Staffing_Sheets
 {
-    public partial class Form1 : Form
+    public partial class ps_Form1 : Form
     {
         public IWebDriver driver;
         public int sheetsMade = 0;
         public string appDataFolder = Directory.GetCurrentDirectory();
         //public string appDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Ride Staffing Sheets";
-        public Form1()
+        public ps_Form1()
         {
             InitializeComponent();
             
@@ -231,13 +231,13 @@ namespace Optim8_Staffing_Sheets
 
 
                         //Making a list of everyone scheduled
-                        var people = new List<individualSchedule>();
+                        var people = new List<ps_individualSchedule>();
                         //reads until there are no more lines to read
                         while ((line = file.ReadLine()) != null)
                         {
                             //making a person from table
                             //see individualSchedule(string) constructor to see how person is built
-                            var person = new individualSchedule(line);
+                            var person = new ps_individualSchedule(line);
                             //adds person to list
                             people.Add(person);
                         }
@@ -331,7 +331,7 @@ namespace Optim8_Staffing_Sheets
                                 }
 
                             }
-                            foreach (individualSchedule worker in people)
+                            foreach (ps_individualSchedule worker in people)
                             {
                                 if(worker.m_ride.Contains("Restroom"))
                                 {

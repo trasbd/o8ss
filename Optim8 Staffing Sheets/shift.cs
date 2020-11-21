@@ -16,7 +16,7 @@ namespace Optim8_Staffing_Sheets
     class shift
     {
         public shiftTime m_shiftTime;
-        public List<individualSchedule> m_crew = new List<individualSchedule>();
+        public List<ps_individualSchedule> m_crew = new List<ps_individualSchedule>();
 
     }
 }

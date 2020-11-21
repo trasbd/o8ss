@@ -16,7 +16,7 @@ namespace Optim8_Staffing_Sheets
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new ps_Form1());
             //Application.Run(new pleasestandby());
         }
     }
