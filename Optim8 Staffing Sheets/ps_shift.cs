@@ -13,7 +13,7 @@ namespace Optim8_Staffing_Sheets
         Night,
         Swing,
     }
-    class shift
+    class ps_shift
     {
         public shiftTime m_shiftTime;
         public List<ps_individualSchedule> m_crew = new List<ps_individualSchedule>();

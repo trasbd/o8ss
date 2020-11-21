@@ -373,10 +373,10 @@ namespace Optim8_Staffing_Sheets
 
                         //[ride][shift][person]
                         //Making a list of rides
-                        var area = new List<ride>
+                        var area = new List<ps_ride>
                         {
                             //Making first ride the ride of the first person in list
-                            new ride(people.ElementAt(0).m_ride)
+                            new ps_ride(people.ElementAt(0).m_ride)
                         };
                         //adds the first person to their ride in a unsorted shift
                         area.ElementAt(0).m_shift[0].m_crew.Add(people.ElementAt(0));
@@ -391,7 +391,7 @@ namespace Optim8_Staffing_Sheets
                             {
                                 //This assumes the people scheduled are listed in order by A/C location
                                 //adds a new ride to the list
-                                area.Add(new ride(people.ElementAt(i).m_ride));
+                                area.Add(new ps_ride(people.ElementAt(i).m_ride));
                             }
                             //adds person to their ride
                             //m_shift[0] is a null shift (not day, night, nor swing) for everyone scheduled at the ride
@@ -647,7 +647,7 @@ namespace Optim8_Staffing_Sheets
         //Creates a Staffing Sheet Excel spreadsheet for an Area for a certain Date passed
         //Pre: area really should contain at least 1 ride (will make blank staffing sheet if 0 rides)
         //Post: Creates an .xls file in the program directory
-        private void printToExcel(List<ride> area, int areaNumber, DateTime dateWanted, string filename)
+        private void printToExcel(List<ps_ride> area, int areaNumber, DateTime dateWanted, string filename)
         {
             Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
 
