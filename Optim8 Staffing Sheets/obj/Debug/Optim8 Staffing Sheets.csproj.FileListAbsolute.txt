@@ -110,7 +110,6 @@ C:\Users\thoma\OneDrive\o8ss\Repos\Optim8 Staffing Sheets\bin\Debug\Optim8 Staff
 C:\Users\thoma\OneDrive\o8ss\Repos\Optim8 Staffing Sheets\bin\Debug\WebDriver.dll
 C:\Users\thoma\OneDrive\o8ss\Repos\Optim8 Staffing Sheets\bin\Debug\WebDriver.Support.dll
 C:\Users\thoma\OneDrive\o8ss\Repos\Optim8 Staffing Sheets\bin\Debug\WebDriver.xml
-C:\Users\thoma\OneDrive\o8ss\Repos\Optim8 Staffing Sheets\bin\Debug\WebDriver.Support.xml
 C:\Users\thoma\OneDrive\o8ss\Repos\Optim8 Staffing Sheets\obj\Debug\Optim8 Staffing Sheets.csprojAssemblyReference.cache
 C:\Users\thoma\OneDrive\o8ss\Repos\Optim8 Staffing Sheets\obj\Debug\Optim8 Staffing Sheets.csproj.ResolveComReference.cache
 C:\Users\thoma\OneDrive\o8ss\Repos\Optim8 Staffing Sheets\obj\Debug\Optim8_Staffing_Sheets.pleasestandby.resources
@@ -121,3 +120,4 @@ C:\Users\thoma\OneDrive\o8ss\Repos\Optim8 Staffing Sheets\obj\Debug\Optim8 Staff
 C:\Users\thoma\OneDrive\o8ss\Repos\Optim8 Staffing Sheets\obj\Debug\Optim8 Staffing Sheets.csproj.CopyComplete
 C:\Users\thoma\OneDrive\o8ss\Repos\Optim8 Staffing Sheets\obj\Debug\Optim8 Staffing Sheets.exe
 C:\Users\thoma\OneDrive\o8ss\Repos\Optim8 Staffing Sheets\obj\Debug\Optim8 Staffing Sheets.pdb
+C:\Users\thoma\OneDrive\o8ss\Repos\Optim8 Staffing Sheets\bin\Debug\WebDriver.Support.xml

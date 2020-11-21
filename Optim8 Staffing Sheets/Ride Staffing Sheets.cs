@@ -63,7 +63,9 @@ namespace Optim8_Staffing_Sheets
 
                         //Disables images so it loads faster
                         options.AddUserProfilePreference("profile.default_content_setting_values.images", 2);
-                        options.AddArgument("headless");
+                        
+                        //hidden chrome option
+                        //options.AddArgument("headless");
                         ChromeDriverService service = ChromeDriverService.CreateDefaultService();
                         service.HideCommandPromptWindow = true;
                         driver = new ChromeDriver(service, options);
