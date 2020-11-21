@@ -769,6 +769,9 @@ namespace Optim8_Staffing_Sheets
         {
             //Sets area dropdown on form to area 1 onLoad
             //cbArea.SelectedIndex = 0;
+
+            checkBoxSortRR.Visible = Program.parkServices;
+
         }
 
         //Closes browser and deletes files

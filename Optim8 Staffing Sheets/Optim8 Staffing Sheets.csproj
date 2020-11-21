@@ -52,6 +52,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="O8SS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="O8SS.Designer.cs">
+      <DependentUpon>O8SS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Park Service Staffing Sheets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ps_ride.cs" />
     <Compile Include="ps_shift.cs" />
+    <EmbeddedResource Include="O8SS.resx">
+      <DependentUpon>O8SS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Park Service Staffing Sheets.resx">
       <DependentUpon>Park Service Staffing Sheets.cs</DependentUpon>
     </EmbeddedResource>
