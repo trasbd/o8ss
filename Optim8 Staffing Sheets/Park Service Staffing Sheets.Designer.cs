@@ -1,6 +1,6 @@
 ﻿namespace Optim8_Staffing_Sheets
 {
-    partial class ps_Form1
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ps_Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,6 +39,8 @@
             this.lblError = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.checkBoxSortRR = new System.Windows.Forms.CheckBox();
+            this.rdAreaLbl = new System.Windows.Forms.Label();
+            this.cbArea = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label3
@@ -99,7 +101,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(320, 79);
+            this.button1.Location = new System.Drawing.Point(281, 108);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
@@ -137,12 +139,40 @@
             this.checkBoxSortRR.Text = "Sort Restrooms into Areas";
             this.checkBoxSortRR.UseVisualStyleBackColor = true;
             // 
-            // ps_Form1
+            // rdAreaLbl
+            // 
+            this.rdAreaLbl.AutoSize = true;
+            this.rdAreaLbl.Location = new System.Drawing.Point(278, 79);
+            this.rdAreaLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.rdAreaLbl.Name = "rdAreaLbl";
+            this.rdAreaLbl.Size = new System.Drawing.Size(75, 17);
+            this.rdAreaLbl.TabIndex = 33;
+            this.rdAreaLbl.Text = "Ride Area:";
+            // 
+            // cbArea
+            // 
+            this.cbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbArea.FormattingEnabled = true;
+            this.cbArea.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cbArea.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cbArea.Location = new System.Drawing.Point(358, 76);
+            this.cbArea.Margin = new System.Windows.Forms.Padding(4);
+            this.cbArea.Name = "cbArea";
+            this.cbArea.Size = new System.Drawing.Size(57, 24);
+            this.cbArea.TabIndex = 32;
+            // 
+            // Form1
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 196);
+            this.Controls.Add(this.rdAreaLbl);
+            this.Controls.Add(this.cbArea);
             this.Controls.Add(this.checkBoxSortRR);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblError);
@@ -155,7 +185,7 @@
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "ps_Form1";
+            this.Name = "Form1";
             this.Text = "Staffing Sheets";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -176,6 +206,8 @@
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.CheckBox checkBoxSortRR;
+        private System.Windows.Forms.Label rdAreaLbl;
+        private System.Windows.Forms.ComboBox cbArea;
     }
 }
 

@@ -12,13 +12,13 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Optim8_Staffing_Sheets
 {
-    public partial class ps_Form1 : Form
+    public partial class Form1 : Form
     {
         public IWebDriver driver;
         public int sheetsMade = 0;
         public string appDataFolder = Directory.GetCurrentDirectory();
         //public string appDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Ride Staffing Sheets";
-        public ps_Form1()
+        public Form1()
         {
             InitializeComponent();
             
@@ -29,12 +29,20 @@ namespace Optim8_Staffing_Sheets
         private void button1_Click(object sender, EventArgs e)
         {
             //Variables
-            //int areaNumber = cbArea.SelectedIndex+1;
+                int areaNumber = cbArea.SelectedIndex + 1;
             DateTime dateWanted = dtpDate.Value;
-            double shiftStartTimeAlloance = 1.01; //In hours
+
+            double shiftStartTimeAlloance = .47; //In hours
+
+            if (Program.parkServices)
+            {
+                shiftStartTimeAlloance = 1.01;
+            }
+                bool sortRestrooms = checkBoxSortRR.Checked;
+            
 
 
-            bool sortRestrooms = checkBoxSortRR.Checked;
+            
 
 
             //Form waiting = new pleasestandby();
@@ -65,7 +73,7 @@ namespace Optim8_Staffing_Sheets
                         options.AddUserProfilePreference("profile.default_content_setting_values.images", 2);
                         
                         //hidden chrome option
-                        options.AddArgument("headless");
+                        //options.AddArgument("headless");
 
                         ChromeDriverService service = ChromeDriverService.CreateDefaultService();
                         service.HideCommandPromptWindow = true;
@@ -119,16 +127,23 @@ namespace Optim8_Staffing_Sheets
 
                     //finds the department Drop Down element
                     SelectElement departmentDropDown = new SelectElement(driver.FindElement(By.Id("ddd2")));
-                    
-                    departmentDropDown.SelectByText("Park Services");
 
-                    //Sets the department to 'blank' because some areas have attractions and rides
-                    //departmentDropDown.SelectByIndex(0);
+                    if (Program.parkServices)
+                    {
+                        departmentDropDown.SelectByText("Park Services");
+                    }
+                    else
+                    {
 
-                    //Finds the Drop Down to select ride area
-                    //SelectElement areaDropDown = new SelectElement(driver.FindElement(By.Id("ddarea")));
-                    //Sets the ride area to the number selected on form
-                    //areaDropDown.SelectByText("Rides Area " + areaNumber);
+                        //Sets the department to 'blank' because some areas have attractions and rides
+                        departmentDropDown.SelectByIndex(0);
+                        //Finds the Drop Down to select ride area
+                        SelectElement areaDropDown = new SelectElement(driver.FindElement(By.Id("ddarea")));
+                        //Sets the ride area to the number selected on form
+                        areaDropDown.SelectByText("Rides Area " + areaNumber);
+                    }
+
+
 
                     //Finds the date from box
                     IWebElement dateFrom = driver.FindElement(By.Id("txtFrom"));
@@ -231,13 +246,13 @@ namespace Optim8_Staffing_Sheets
 
 
                         //Making a list of everyone scheduled
-                        var people = new List<ps_individualSchedule>();
+                        var people = new List<individualSchedule>();
                         //reads until there are no more lines to read
                         while ((line = file.ReadLine()) != null)
                         {
                             //making a person from table
                             //see individualSchedule(string) constructor to see how person is built
-                            var person = new ps_individualSchedule(line);
+                            var person = new individualSchedule(line);
                             //adds person to list
                             people.Add(person);
                         }
@@ -246,9 +261,9 @@ namespace Optim8_Staffing_Sheets
                         //Closes file
                         file.Close();
                         //Deletes table file
-                        File.Delete(appDataFolder + "\\rawTable.dat");
+                        //File.Delete(appDataFolder + "\\rawTable.dat");
 
-                        if(sortRestrooms)
+                        if(Program.parkServices && sortRestrooms)
                         {
                             //*************************************************
                             //**Getting the Certs to sort Restrooms into Areas**
@@ -331,7 +346,7 @@ namespace Optim8_Staffing_Sheets
                                 }
 
                             }
-                            foreach (ps_individualSchedule worker in people)
+                            foreach (individualSchedule worker in people)
                             {
                                 if(worker.m_ride.Contains("Restroom"))
                                 {
@@ -349,7 +364,9 @@ namespace Optim8_Staffing_Sheets
                             
                         }
 
-                        List<String> rideSortOrderReversed = new List<String> {
+                        if (Program.parkServices)
+                        {
+                            List<String> rideSortOrderReversed = new List<String> {
                             "PS Area E / Catering ",
                             "Women's Restrooms ",
                             "Men's Restrooms ",
@@ -358,25 +375,26 @@ namespace Optim8_Staffing_Sheets
                             "PS Area 2 ",
                             "PS Area 1 ",
                             ""
-                        };
+                            };
 
-                        var people4 = people.OrderBy(i => i.m_end).ToList();
-                        var people2 = people4.OrderBy(i => i.m_start).ToList();
-                        //var people2 = people.OrderBy(i => i.m_ride.Contains("PS Area")).ThenBy(i => i.m_ride.Contains("Restroom")).ToList();
-                        //var people2 = people.OrderBy(i=> i.m_ride).ThenBy(i => i.m_ride.Contains("PS Area")).ThenBy(i => i.m_ride.Equals("")).ToList();
-                        var people3 = people2.OrderByDescending(i => rideSortOrderReversed.IndexOf(i.m_ride)).ToList();
-                        
-                        //var people2 = people.OrderBy(o => o.m_ride).ToList<individualSchedule>();
+                            var people4 = people.OrderBy(i => i.m_end).ToList();
+                            var people2 = people4.OrderBy(i => i.m_start).ToList();
+                            //var people2 = people.OrderBy(i => i.m_ride.Contains("PS Area")).ThenBy(i => i.m_ride.Contains("Restroom")).ToList();
+                            //var people2 = people.OrderBy(i=> i.m_ride).ThenBy(i => i.m_ride.Contains("PS Area")).ThenBy(i => i.m_ride.Equals("")).ToList();
+                            var people3 = people2.OrderByDescending(i => rideSortOrderReversed.IndexOf(i.m_ride)).ToList();
 
-                        people = people3;
+                            //var people2 = people.OrderBy(o => o.m_ride).ToList<individualSchedule>();
+
+                            people = people3;
+                        }
 
 
                         //[ride][shift][person]
                         //Making a list of rides
-                        var area = new List<ps_ride>
+                        var area = new List<ride>
                         {
                             //Making first ride the ride of the first person in list
-                            new ps_ride(people.ElementAt(0).m_ride)
+                            new ride(people.ElementAt(0).m_ride)
                         };
                         //adds the first person to their ride in a unsorted shift
                         area.ElementAt(0).m_shift[0].m_crew.Add(people.ElementAt(0));
@@ -391,7 +409,7 @@ namespace Optim8_Staffing_Sheets
                             {
                                 //This assumes the people scheduled are listed in order by A/C location
                                 //adds a new ride to the list
-                                area.Add(new ps_ride(people.ElementAt(i).m_ride));
+                                area.Add(new ride(people.ElementAt(i).m_ride));
                             }
                             //adds person to their ride
                             //m_shift[0] is a null shift (not day, night, nor swing) for everyone scheduled at the ride
@@ -647,7 +665,7 @@ namespace Optim8_Staffing_Sheets
         //Creates a Staffing Sheet Excel spreadsheet for an Area for a certain Date passed
         //Pre: area really should contain at least 1 ride (will make blank staffing sheet if 0 rides)
         //Post: Creates an .xls file in the program directory
-        private void printToExcel(List<ps_ride> area, int areaNumber, DateTime dateWanted, string filename)
+        private void printToExcel(List<ride> area, int areaNumber, DateTime dateWanted, string filename)
         {
             Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
 
@@ -771,6 +789,9 @@ namespace Optim8_Staffing_Sheets
             //cbArea.SelectedIndex = 0;
 
             checkBoxSortRR.Visible = Program.parkServices;
+
+            cbArea.Visible = !Program.parkServices;
+            rdAreaLbl.Visible = !Program.parkServices;
 
         }
 

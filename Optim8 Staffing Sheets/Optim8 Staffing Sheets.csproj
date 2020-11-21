@@ -64,11 +64,11 @@
     <Compile Include="Park Service Staffing Sheets.Designer.cs">
       <DependentUpon>Park Service Staffing Sheets.cs</DependentUpon>
     </Compile>
-    <Compile Include="ps_individualSchedule.cs" />
+    <Compile Include="individualSchedule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ps_ride.cs" />
-    <Compile Include="ps_shift.cs" />
+    <Compile Include="ride.cs" />
+    <Compile Include="shift.cs" />
     <EmbeddedResource Include="O8SS.resx">
       <DependentUpon>O8SS.cs</DependentUpon>
     </EmbeddedResource>

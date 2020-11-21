@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Optim8_Staffing_Sheets
 {
-    class ps_ride
+    class ride
     {
         public string m_name = "";
-        public ps_shift[] m_shift = new ps_shift[5];
+        public shift[] m_shift = new shift[5];
         public int m_listUsed = 0;
 
-        public ps_ride(string name)
+        public ride(string name)
         {
             for (int i = 0; i < 5; i++)
             {
-                m_shift[i] = new ps_shift();
+                m_shift[i] = new shift();
             }
             m_name = name;
         }

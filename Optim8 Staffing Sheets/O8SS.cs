@@ -20,11 +20,21 @@ namespace Optim8_Staffing_Sheets
         private void rdSSbtn_Click(object sender, EventArgs e)
         {
             Program.parkServices = false;
+            var ssForm = new Form1();
+            this.Hide();
+            ssForm.Closed += (s, args) => this.Close();
+            ssForm.Show();
+
+
         }
 
         private void psSSbtn_Click(object sender, EventArgs e)
         {
             Program.parkServices = true;
+            var ssForm = new Form1();
+            this.Hide();
+            ssForm.Closed += (s, args) => this.Close();
+            ssForm.Show();
         }
     }
 }
