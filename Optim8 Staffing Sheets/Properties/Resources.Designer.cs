@@ -59,15 +59,5 @@ namespace Optim8_Staffing_Sheets.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _2020_10_15_04_37_21_SPY_Fox__Operation_Ozone {
-            get {
-                object obj = ResourceManager.GetObject("2020-10-15 04_37_21-SPY Fox_ Operation Ozone", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
