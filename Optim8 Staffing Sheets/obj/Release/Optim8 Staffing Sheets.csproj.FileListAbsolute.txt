@@ -156,3 +156,17 @@ C:\Users\thoma\source\repos\o8ss_3-15-2021\Optim8 Staffing Sheets\obj\Release\Op
 C:\Users\thoma\source\repos\o8ss_3-15-2021\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.CopyComplete
 C:\Users\thoma\source\repos\o8ss_3-15-2021\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.exe
 C:\Users\thoma\source\repos\o8ss_3-15-2021\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.pdb
+C:\o8ss\Optim8 Staffing Sheets\bin\Release\Optim8 Staffing Sheets.exe.config
+C:\o8ss\Optim8 Staffing Sheets\bin\Release\Optim8 Staffing Sheets.exe
+C:\o8ss\Optim8 Staffing Sheets\bin\Release\Optim8 Staffing Sheets.pdb
+C:\o8ss\Optim8 Staffing Sheets\bin\Release\WebDriver.dll
+C:\o8ss\Optim8 Staffing Sheets\bin\Release\WebDriver.Support.dll
+C:\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.AssemblyReference.cache
+C:\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.ResolveComReference.cache
+C:\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8_Staffing_Sheets.Form1.resources
+C:\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8_Staffing_Sheets.Properties.Resources.resources
+C:\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.GenerateResource.cache
+C:\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.CoreCompileInputs.cache
+C:\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.CopyComplete
+C:\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.exe
+C:\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.pdb
