@@ -59,15 +59,5 @@ namespace Optim8_Staffing_Sheets.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pls_standy_by {
-            get {
-                object obj = ResourceManager.GetObject("pls standy by", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
