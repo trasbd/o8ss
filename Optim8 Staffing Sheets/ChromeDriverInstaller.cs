@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 
 public class ChromeDriverInstaller
 {
@@ -121,6 +121,7 @@ public class ChromeDriverInstaller
         using (var chromeDriverWriter = new FileStream(targetPath, FileMode.Create))
         {
             var entry = zipArchive.GetEntry(driverName);
+            MessageBox.Show(driverName + " installed!");
             Stream chromeDriverStream = entry.Open();
             await chromeDriverStream.CopyToAsync(chromeDriverWriter);
         }

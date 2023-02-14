@@ -669,8 +669,8 @@ namespace Optim8_Staffing_Sheets
             MessageBox.Show($"Chrome version {chromeVersion.Result} detected");
             //Console.WriteLine($"Chrome version {chromeVersion} detected");
 
-            chromeDriverInstaller.Install(chromeVersion.ToString());
-            MessageBox.Show("ChromeDriver installed");
+            chromeDriverInstaller.Install();
+            //MessageBox.Show("ChromeDriver installed");
         }
     }
 }
