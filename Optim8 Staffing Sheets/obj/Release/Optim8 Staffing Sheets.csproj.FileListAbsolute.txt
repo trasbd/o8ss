@@ -173,3 +173,19 @@ C:\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.CoreCom
 C:\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.CopyComplete
 C:\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.exe
 C:\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.pdb
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\bin\Release\Optim8 Staffing Sheets.exe.config
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\bin\Release\Optim8 Staffing Sheets.exe
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\bin\Release\Optim8 Staffing Sheets.pdb
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\bin\Release\WebDriver.dll
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\bin\Release\WebDriver.Support.dll
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.AssemblyReference.cache
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.SuggestedBindingRedirects.cache
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.ResolveComReference.cache
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8_Staffing_Sheets.pleasestandby.resources
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8_Staffing_Sheets.Form1.resources
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8_Staffing_Sheets.Properties.Resources.resources
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.GenerateResource.cache
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.CoreCompileInputs.cache
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.csproj.CopyComplete
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.exe
+C:\Users\thoma\Source\Repos\trasbd\o8ss\Optim8 Staffing Sheets\obj\Release\Optim8 Staffing Sheets.pdb
