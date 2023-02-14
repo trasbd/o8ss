@@ -40,7 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnVersionChk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -153,14 +153,15 @@
             this.dtpDate.Size = new System.Drawing.Size(265, 22);
             this.dtpDate.TabIndex = 30;
             // 
-            // label5
+            // btnVersionChk
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(96, 143);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 16);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "label5";
+            this.btnVersionChk.Location = new System.Drawing.Point(403, 161);
+            this.btnVersionChk.Name = "btnVersionChk";
+            this.btnVersionChk.Size = new System.Drawing.Size(197, 23);
+            this.btnVersionChk.TabIndex = 31;
+            this.btnVersionChk.Text = "Check ChromeDriver Version";
+            this.btnVersionChk.UseVisualStyleBackColor = true;
+            this.btnVersionChk.Click += new System.EventHandler(this.btnVersionChk_Click);
             // 
             // Form1
             // 
@@ -168,7 +169,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 196);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnVersionChk);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.label4);
@@ -204,7 +205,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.DateTimePicker dtpDate;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnVersionChk;
     }
 }
 
