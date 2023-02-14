@@ -45,58 +45,65 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Location = new System.Drawing.Point(16, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 25;
             this.label3.Text = "Company:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 63);
+            this.label2.Location = new System.Drawing.Point(16, 78);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(70, 16);
             this.label2.TabIndex = 24;
             this.label2.Text = "Password:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 36);
+            this.label1.Location = new System.Drawing.Point(11, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 23;
             this.label1.Text = "Username:";
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(72, 60);
+            this.txtPass.Location = new System.Drawing.Point(96, 74);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(100, 20);
+            this.txtPass.Size = new System.Drawing.Size(132, 22);
             this.txtPass.TabIndex = 1;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(72, 33);
+            this.txtID.Location = new System.Drawing.Point(96, 41);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.Size = new System.Drawing.Size(132, 22);
             this.txtID.TabIndex = 0;
             // 
             // txtCompany
             // 
-            this.txtCompany.Location = new System.Drawing.Point(72, 6);
+            this.txtCompany.Location = new System.Drawing.Point(96, 7);
+            this.txtCompany.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(100, 20);
+            this.txtCompany.Size = new System.Drawing.Size(132, 22);
             this.txtCompany.TabIndex = 20;
             this.txtCompany.Text = "sfsl";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(240, 64);
+            this.button1.Location = new System.Drawing.Point(320, 79);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 19;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
@@ -112,41 +119,46 @@
             "2",
             "3",
             "4"});
-            this.cbArea.Location = new System.Drawing.Point(255, 37);
+            this.cbArea.Location = new System.Drawing.Point(340, 46);
+            this.cbArea.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbArea.Name = "cbArea";
-            this.cbArea.Size = new System.Drawing.Size(44, 21);
+            this.cbArea.Size = new System.Drawing.Size(57, 24);
             this.cbArea.TabIndex = 27;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(195, 40);
+            this.label4.Location = new System.Drawing.Point(260, 49);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.Size = new System.Drawing.Size(71, 16);
             this.label4.TabIndex = 28;
             this.label4.Text = "Ride Area:";
             // 
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(12, 106);
+            this.lblError.Location = new System.Drawing.Point(16, 130);
+            this.lblError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 13);
+            this.lblError.Size = new System.Drawing.Size(0, 16);
             this.lblError.TabIndex = 29;
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(198, 12);
+            this.dtpDate.Location = new System.Drawing.Point(264, 15);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpDate.Size = new System.Drawing.Size(265, 22);
             this.dtpDate.TabIndex = 30;
+            //this.dtpDate.Value = new System.DateTime(2023, 2, 14, 0, 0, 0, 0);
             // 
             // Form1
             // 
             this.AcceptButton = this.button1;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 159);
+            this.ClientSize = new System.Drawing.Size(612, 196);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.label4);
@@ -159,6 +171,7 @@
             this.Controls.Add(this.txtCompany);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Staffing Sheets";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);

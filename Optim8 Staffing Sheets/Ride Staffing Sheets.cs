@@ -450,7 +450,7 @@ namespace Optim8_Staffing_Sheets
 
 
                         //Prints list to excel
-                        printToExcel(area, areaNumber, dateWanted, fileName);
+                        PrintToExcel(area, areaNumber, dateWanted, fileName);
 
                         //Opens up excel file
                         System.Diagnostics.Process proc = new System.Diagnostics.Process();
@@ -504,7 +504,7 @@ namespace Optim8_Staffing_Sheets
         //Creates a Staffing Sheet Excel spreadsheet for an Area for a certain Date passed
         //Pre: area really should contain at least 1 ride (will make blank staffing sheet if 0 rides)
         //Post: Creates an .xls file in the program directory
-        private void printToExcel(List<ride> area, int areaNumber, DateTime dateWanted, string filename)
+        private void PrintToExcel(List<ride> area, int areaNumber, DateTime dateWanted, string filename)
         {
             Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
 
@@ -518,6 +518,8 @@ namespace Optim8_Staffing_Sheets
             {
                 Excel.Workbook xlWorkBook;
                 Excel.Worksheet xlWorkSheet;
+
+
                 
                 //From what I understand misValue is used similar to null/default
                 object misValue = System.Reflection.Missing.Value;
