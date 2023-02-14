@@ -41,6 +41,7 @@
             this.lblError = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.btnVersionChk = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -155,7 +156,7 @@
             // 
             // btnVersionChk
             // 
-            this.btnVersionChk.Location = new System.Drawing.Point(320, 161);
+            this.btnVersionChk.Location = new System.Drawing.Point(12, 161);
             this.btnVersionChk.Name = "btnVersionChk";
             this.btnVersionChk.Size = new System.Drawing.Size(280, 23);
             this.btnVersionChk.TabIndex = 31;
@@ -163,12 +164,23 @@
             this.btnVersionChk.UseVisualStyleBackColor = true;
             this.btnVersionChk.Click += new System.EventHandler(this.btnVersionChk_Click);
             // 
+            // btnAbout
+            // 
+            this.btnAbout.Location = new System.Drawing.Point(525, 161);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(75, 23);
+            this.btnAbout.TabIndex = 32;
+            this.btnAbout.Text = "About";
+            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 196);
+            this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnVersionChk);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblError);
@@ -206,6 +218,7 @@
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Button btnVersionChk;
+        private System.Windows.Forms.Button btnAbout;
     }
 }
 
