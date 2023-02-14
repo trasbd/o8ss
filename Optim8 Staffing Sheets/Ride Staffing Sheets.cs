@@ -802,6 +802,26 @@ namespace Optim8_Staffing_Sheets
             }
 
         }
+
+        private void btnVersionChk_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Installing ChromeDriver");
+
+            var chromeDriverInstaller = new ChromeDriverInstaller();
+
+            // not necessary, but added for logging purposes
+            var chromeVersion = chromeDriverInstaller.GetChromeVersion();
+            MessageBox.Show($"Chrome version {chromeVersion.Result} detected");
+            //Console.WriteLine($"Chrome version {chromeVersion} detected");
+
+            chromeDriverInstaller.Install(true);
+            //MessageBox.Show("ChromeDriver installed");
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Last Updated: 2/14/2023\nContact: Thomas Robert\nEmail: tRobert@sftp.com");
+        }
     }
 }
 

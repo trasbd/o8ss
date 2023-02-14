@@ -39,6 +39,8 @@
             this.lblError = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.checkBoxSortRR = new System.Windows.Forms.CheckBox();
+            this.btnVersionChk = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -47,7 +49,7 @@
             this.label3.Location = new System.Drawing.Point(16, 11);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 17);
+            this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 25;
             this.label3.Text = "Company:";
             // 
@@ -57,7 +59,7 @@
             this.label2.Location = new System.Drawing.Point(16, 78);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.Size = new System.Drawing.Size(70, 16);
             this.label2.TabIndex = 24;
             this.label2.Text = "Password:";
             // 
@@ -67,7 +69,7 @@
             this.label1.Location = new System.Drawing.Point(11, 44);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 17);
+            this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 23;
             this.label1.Text = "Username:";
             // 
@@ -114,7 +116,7 @@
             this.lblError.Location = new System.Drawing.Point(16, 130);
             this.lblError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 17);
+            this.lblError.Size = new System.Drawing.Size(0, 16);
             this.lblError.TabIndex = 29;
             // 
             // dtpDate
@@ -132,10 +134,32 @@
             this.checkBoxSortRR.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxSortRR.Location = new System.Drawing.Point(281, 51);
             this.checkBoxSortRR.Name = "checkBoxSortRR";
-            this.checkBoxSortRR.Size = new System.Drawing.Size(196, 21);
+            this.checkBoxSortRR.Size = new System.Drawing.Size(185, 20);
             this.checkBoxSortRR.TabIndex = 31;
             this.checkBoxSortRR.Text = "Sort Restrooms into Areas";
             this.checkBoxSortRR.UseVisualStyleBackColor = true;
+            // 
+            // btnVersionChk
+            // 
+            this.btnVersionChk.Location = new System.Drawing.Point(13, 155);
+            this.btnVersionChk.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVersionChk.Name = "btnVersionChk";
+            this.btnVersionChk.Size = new System.Drawing.Size(293, 28);
+            this.btnVersionChk.TabIndex = 32;
+            this.btnVersionChk.Text = "Check ChromeDriver Version";
+            this.btnVersionChk.UseVisualStyleBackColor = true;
+            this.btnVersionChk.Click += new System.EventHandler(this.btnVersionChk_Click);
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.Location = new System.Drawing.Point(499, 155);
+            this.btnAbout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(100, 28);
+            this.btnAbout.TabIndex = 33;
+            this.btnAbout.Text = "About";
+            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // Form1
             // 
@@ -143,6 +167,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 196);
+            this.Controls.Add(this.btnAbout);
+            this.Controls.Add(this.btnVersionChk);
             this.Controls.Add(this.checkBoxSortRR);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblError);
@@ -176,6 +202,8 @@
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.CheckBox checkBoxSortRR;
+        private System.Windows.Forms.Button btnVersionChk;
+        private System.Windows.Forms.Button btnAbout;
     }
 }
 
