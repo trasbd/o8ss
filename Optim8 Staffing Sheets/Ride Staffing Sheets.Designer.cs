@@ -155,9 +155,9 @@
             // 
             // btnVersionChk
             // 
-            this.btnVersionChk.Location = new System.Drawing.Point(403, 161);
+            this.btnVersionChk.Location = new System.Drawing.Point(320, 161);
             this.btnVersionChk.Name = "btnVersionChk";
-            this.btnVersionChk.Size = new System.Drawing.Size(197, 23);
+            this.btnVersionChk.Size = new System.Drawing.Size(280, 23);
             this.btnVersionChk.TabIndex = 31;
             this.btnVersionChk.Text = "Check ChromeDriver Version";
             this.btnVersionChk.UseVisualStyleBackColor = true;
