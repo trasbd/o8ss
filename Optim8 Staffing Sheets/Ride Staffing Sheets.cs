@@ -1,7 +1,9 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.Win32;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,11 +20,13 @@ namespace Optim8_Staffing_Sheets
         public int sheetsMade = 0;
         public string appDataFolder = Directory.GetCurrentDirectory();
         //public string appDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Ride Staffing Sheets";
+
+
         public Form1()
         {
+
             InitializeComponent();
-            
-            
+
         }
 
 
@@ -59,6 +63,7 @@ namespace Optim8_Staffing_Sheets
                         ChromeDriverService service = ChromeDriverService.CreateDefaultService();
                         service.HideCommandPromptWindow = true;
                         driver = new ChromeDriver(service, options);
+                        
                         //makes form ontop of web browser
                         //this.TopMost = true;
                         //Go to sixflags.team

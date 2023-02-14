@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -75,7 +76,7 @@
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(96, 74);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(132, 22);
@@ -84,7 +85,7 @@
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(96, 41);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(132, 22);
             this.txtID.TabIndex = 0;
@@ -92,7 +93,7 @@
             // txtCompany
             // 
             this.txtCompany.Location = new System.Drawing.Point(96, 7);
-            this.txtCompany.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCompany.Margin = new System.Windows.Forms.Padding(4);
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.Size = new System.Drawing.Size(132, 22);
             this.txtCompany.TabIndex = 20;
@@ -101,7 +102,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(320, 79);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 19;
@@ -120,7 +121,7 @@
             "3",
             "4"});
             this.cbArea.Location = new System.Drawing.Point(340, 46);
-            this.cbArea.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbArea.Margin = new System.Windows.Forms.Padding(4);
             this.cbArea.Name = "cbArea";
             this.cbArea.Size = new System.Drawing.Size(57, 24);
             this.cbArea.TabIndex = 27;
@@ -147,11 +148,19 @@
             // dtpDate
             // 
             this.dtpDate.Location = new System.Drawing.Point(264, 15);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(265, 22);
             this.dtpDate.TabIndex = 30;
-            //this.dtpDate.Value = new System.DateTime(2023, 2, 14, 0, 0, 0, 0);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(96, 143);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 16);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "label5";
             // 
             // Form1
             // 
@@ -159,6 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 196);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.label4);
@@ -171,7 +181,7 @@
             this.Controls.Add(this.txtCompany);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Staffing Sheets";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
@@ -194,6 +204,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.Label label5;
     }
 }
 
